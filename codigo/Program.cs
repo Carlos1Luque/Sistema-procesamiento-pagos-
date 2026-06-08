@@ -1,46 +1,25 @@
 ﻿using System;
-
 class Program
 {
-    static void Main(string[] args)
+static List<PagoTarjeta> pagosTarjeta = new List<PagoTarjeta>();
+static List<PagoEfectivo> pagosEfectivo = new List<PagoEfectivo>();
+static List<PagoTransferencia> pagosTransferencia = new List<PagoTransferencia>();
+static void Main()
     {
-        string titular;
-        double monto;
-        int opcion;
-        Pago pago;
-
-        Console.Write("Ingrese el titular: ");
-        titular = Console.ReadLine();
-
-        Console.Write("Ingrese el monto: ");
-        monto = double.Parse(Console.ReadLine());
-
-        Console.WriteLine("1 - Tarjeta");
-        Console.WriteLine("2 - Transferencia");
-        Console.WriteLine("3 - Efectivo");
-        opcion = int.Parse(Console.ReadLine());
-
-        switch (opcion)
+        Console.WriteLine("Bienvenido al sistema de pagos C y D S.A.");
+        Console.WriteLine("Seleccione el método de pago: (Tarjeta/Efectivo/Transferencia)");
+        String metodoPago = Console.ReadLine(); 
+        Console.WriteLine("Ingrese el nombre del titular:");
+        String titular = Console.ReadLine();
+        Console.WriteLine("Ingrese el monto a pagar:");
+        double monto = Convert.ToDouble(Console.ReadLine());
+        if(metodoPago.ToLower() == "tarjeta")
         {
-            case 1:
-                pago = new PagoTarjeta(titular, monto);
-                break;
-
-            case 2:
-                pago = new PagoTransferencia(titular, monto);
-                break;
-
-            case 3:
-                pago = new PagoEfectivo(titular, monto);
-                break;
-
-            default:
-                Console.WriteLine("La opción no e svalida");
-                return;
+            PagoTarjeta pagoTarjeta = new PagoTarjeta(titular, monto); 
+            pagosTarjeta.Add(pagoTarjeta);
+            
         }
-
-        pago.MostrarInformacion();
-
-        pago.ProcesarPago();
     }
 }
+
+
