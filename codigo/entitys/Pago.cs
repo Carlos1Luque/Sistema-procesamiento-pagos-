@@ -21,4 +21,15 @@ abstract class Pago
         Console.WriteLine("Titular: " + Titular);
         Console.WriteLine("Monto original: $" + Monto);
     }
+    public void ProcesarPago()
+    {
+        double comision;
+
+        comision = CalcularComision();
+
+        Console.WriteLine("Procesando pago...");
+        Console.WriteLine("Comisión aplicada: $" + comision);
+        Console.WriteLine("Monto final: $" + (Monto + comision));
+        Console.WriteLine("Pago realizado correctamente.");
+    }
 }
