@@ -1,0 +1,24 @@
+using System;
+
+abstract class Pago
+{
+    private string titular;
+    private double monto;
+
+    public string Titular { get { return this.titular; } set { this.titular = value; } }
+    public double Monto { get { return this.monto; } set { this.monto = value; } }
+
+    public Pago(string titular, double monto)
+    {
+        Titular = titular;
+        Monto = monto;
+    }
+
+    public abstract double CalcularComision();
+
+    public virtual void MostrarInformacion()
+    {
+        Console.WriteLine("Titular: " + Titular);
+        Console.WriteLine("Monto original: $" + Monto);
+    }
+}
