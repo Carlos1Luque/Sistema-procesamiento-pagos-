@@ -20,6 +20,8 @@ abstract class Pago
     {
         Console.WriteLine("Titular: " + Titular);
         Console.WriteLine("Monto original: $" + Monto);
+        Console.WriteLine("Comisión: $" + CalcularComision());
+        Console.WriteLine("Monto total a pagar: $" + (Monto + CalcularComision()));
     }
     public void ProcesarPago()
     {

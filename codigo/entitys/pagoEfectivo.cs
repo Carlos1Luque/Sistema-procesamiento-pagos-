@@ -10,6 +10,6 @@
 
         public override double CalcularComision()
         {
-            return 0;
+            return -(Monto * 0.10);
         }
     }

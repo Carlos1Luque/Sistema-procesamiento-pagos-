@@ -8,6 +8,6 @@ class PagoTransferencia : Pago
     public override double CalcularComision()
     {
         
-    return -(Monto * 0.10);
+    return 0; 
     }
 }
