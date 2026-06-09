@@ -136,7 +136,6 @@ class Program
             {
                 pago.MostrarInformacion();
                 Console.WriteLine("Gracias por confiar en nuestro sistema de pagos.");
-                Console.WriteLine("Un decuento para el suegro mas fachero del mundo"); 
             }
         }
         else
